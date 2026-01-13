@@ -2,11 +2,31 @@
 
 ## [1.2.4](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.2.3...v1.2.4) (2026-01-13)
 
+
+### Updates
+
+* add repository info to package.json ([9633cbc](https://github.com/OneBoardTech/ns-auth-sdk/commit/9633cbcb6ef849ab13cf5490d9e3dd458b1bca2d))
+
 ## [1.2.3](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.2.2...v1.2.3) (2026-01-13)
+
+
+### Updates
+
+* update publish gha ([d548bdd](https://github.com/OneBoardTech/ns-auth-sdk/commit/d548bddefc56d2737ea0ba5c5ccaf649cdbed1f2))
 
 ## [1.2.2](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.2.1...v1.2.2) (2026-01-13)
 
+
+### Updates
+
+* update publish gha to trigger after release ([25ed6bf](https://github.com/OneBoardTech/ns-auth-sdk/commit/25ed6bf47d0b93601460e8742d3a3169b99bd18a))
+
 ## [1.2.1](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.2.0...v1.2.1) (2026-01-13)
+
+
+### Updates
+
+* update semantic release ([5b2bfb6](https://github.com/OneBoardTech/ns-auth-sdk/commit/5b2bfb697b108f5d4027ba24843c1c8249f5441d))
 
 # [1.2.0](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.1.0...v1.2.0) (2026-01-13)
 

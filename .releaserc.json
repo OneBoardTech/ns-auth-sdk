@@ -20,7 +20,26 @@
         }
       }
     ],
-    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "angular",
+        "presetConfig": {
+          "types": [
+            { "type": "feat", "section": "Features" },
+            { "type": "fix", "section": "Bug Fixes" },
+            { "type": "perf", "section": "Performance Improvements" },
+            { "type": "chore", "section": "Updates" },
+            { "type": "refactor", "section": "Code Refactoring" },
+            { "type": "docs", "section": "Documentation", "hidden": false },
+            { "type": "style", "section": "Styles", "hidden": false },
+            { "type": "test", "section": "Tests", "hidden": false },
+            { "type": "build", "section": "Build System", "hidden": false },
+            { "type": "ci", "section": "Continuous Integration", "hidden": false }
+          ]
+        }
+      }
+    ],
     [
       "@semantic-release/changelog",
       {
