@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.0.0...v1.1.0) (2026-01-13)
+
+
+### Features
+
+* add publish.yml and remove release.yml ([0005df3](https://github.com/OneBoardTech/ns-auth-sdk/commit/0005df3c42c21796d2cb043b482a6c0b754c0925))
+
 # 1.0.0 (2026-01-11)
 
 
