@@ -26,6 +26,9 @@
       "@semantic-release/release-notes-generator",
       {
         "preset": "angular",
+        "parserOpts": {
+          "noteKeywords": ["BREAKING CHANGE", "BREAKING-CHANGE"]
+        },
         "presetConfig": {
           "types": [
             { "type": "feat", "section": "Features" },
@@ -39,6 +42,9 @@
             { "type": "build", "section": "Build System", "hidden": false },
             { "type": "ci", "section": "Continuous Integration", "hidden": false }
           ]
+        },
+        "writerOpts": {
+          "commitsSort": ["subject", "scope"]
         }
       }
     ],

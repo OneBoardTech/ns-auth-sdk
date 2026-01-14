@@ -1,10 +1,42 @@
 ## [1.2.8](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.2.7...v1.2.8) (2026-01-14)
 
+
+### Updates
+
+* migrate from tsup to tsdown ([b5a17ec](https://github.com/OneBoardTech/ns-auth-sdk/commit/b5a17ec))
+
 ## [1.2.7](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.2.6...v1.2.7) (2026-01-14)
+
+
+### Updates
+
+* update dependencies ([79c5c6e](https://github.com/OneBoardTech/ns-auth-sdk/commit/79c5c6e))
+
+
+### Continuous Integration
+
+* update actions versions in publish.yml and release.yml to specific commits ([e8276d7](https://github.com/OneBoardTech/ns-auth-sdk/commit/e8276d7))
+* update publish.yml to trigger on tags v* ([8737e00](https://github.com/OneBoardTech/ns-auth-sdk/commit/8737e00))
+
+
+### Documentation
+
+* update README ([1785f4f](https://github.com/OneBoardTech/ns-auth-sdk/commit/1785f4f))
+* add DEVELOPMENT.md ([a431ac9](https://github.com/OneBoardTech/ns-auth-sdk/commit/a431ac9))
 
 ## [1.2.6](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.2.5...v1.2.6) (2026-01-13)
 
+
+### Updates
+
+* update .releaserc.json and CHANGELOG.md ([0f6925f](https://github.com/OneBoardTech/ns-auth-sdk/commit/0f6925f))
+
 ## [1.2.5](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.2.4...v1.2.5) (2026-01-13)
+
+
+### Updates
+
+* update README.md ([d8f50a4](https://github.com/OneBoardTech/ns-auth-sdk/commit/d8f50a4))
 
 ## [1.2.4](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.2.3...v1.2.4) (2026-01-13)
 
