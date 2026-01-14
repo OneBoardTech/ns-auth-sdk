@@ -40,25 +40,25 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "applesauce-core": "^5.0.0",
-    "nosskey-sdk": "^0.0.4"
+    "nosskey-sdk": "^0.0.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "zustand": "^4.5.5",
     "qrcode.react": "^4.2.0",
-    "react-zxing": "^2.1.0"
+    "react-zxing": "^2.1.0",
+    "zustand": "^4.5.7"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^9.2.6",
-    "@semantic-release/npm": "^11.0.2",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "semantic-release": "^23.0.2",
-    "tsup": "^8.0.0",
-    "typescript": "^5.6.2"
+    "@semantic-release/npm": "^11.0.3",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "semantic-release": "^23.1.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
   }
 }
