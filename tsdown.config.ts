@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsdown';
 
 export default defineConfig({
   entry: ['src/index.ts'],
@@ -10,4 +10,3 @@ export default defineConfig({
   external: ['react', 'react-dom', 'applesauce-core', 'nosskey-sdk'],
   treeshake: true,
 });
-
