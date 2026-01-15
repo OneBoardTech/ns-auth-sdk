@@ -163,10 +163,6 @@ function MembershipPageComponent() {
 
 ## API Reference
 
-### AuthService
-
-Wrapper around `nosskey-sdk` for WebAuthn/Passkey integration.
-
 #### Methods
 
 - `createPasskey(username?: string): Promise<Uint8Array>` - Create a new passkey
