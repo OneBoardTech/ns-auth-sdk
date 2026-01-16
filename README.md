@@ -2,10 +2,14 @@
  
 _The simplest way of doing Auth with seamless and decentralized Key-Management for SSO, Authentication, Membership, and Profile-Management_
 
-NSAuth enables client-side managing of private-keys with WebAuthn passkeys (FIDO2 credentials). By leveraging passkeys, users avoid traditional private‑key backups and password hassles, relying instead on biometric or device‑based authentication. The keys are compatible with common blockchains like Bitcoin and Ethereum and data is stored as events on public relays and can be encrypted.
+### Who is it for?
+Being trusted by Financial Institutions for Client Onboarding and Digital Communities for Membership Management. Examples include [NSAuth](https://nsauth.vercel.app/) and [OneBoard](https://www.oneboard.li/).
+The SDK enables client-side managing of private-keys with WebAuthn passkeys (FIDO2 credentials). By leveraging passkeys, users avoid traditional private‑key backups and password hassles, relying instead on biometric or device‑based authentication. The keys are compatible with common blockchains like Bitcoin and Ethereum and data is stored as events on public relays and can be encrypted.
 
 ## The Open Alternative for Auth
 Open‑source, client‑side, decentralized single‑sign‑on (SSO) like NSAuth is superior because it puts the user’s identity and cryptographic keys directly in the hands of the individual, eliminating reliance on any central authority that could become a single point of failure, a privacy sinkhole, or a bottleneck for policy updates. By storing a self‑sovereign credential on the device’s secure enclave and validating access against a signed, versioned member list, every interaction—from unlocking a gym door to logging into an online course is verified instantly without ever transmitting personal identifiers. This architecture enables real‑time privilege changes (a badge upgrade or a revocation propagates the moment the list is updated), removes passwords and phishing risk through biometric or hardware‑key authentication, and works uniformly for anyone, including stateless persons or diaspora communities, because trust is derived from cryptographic proofs rather than government‑issued IDs. Moreover, being open source lets developers audit the code, contribute improvements, and ensure transparency, while the decentralized design guarantees that no single entity can unilaterally alter membership rules, providing stronger governance, auditability, and privacy than traditional, server‑centric SSO solutions.
+
+## Technology
 
 ### Choose your Backend
 NSAuth is designed as a frontend SSO where data can be synced in a trust minimized way. The basics are there for extensions to interoperate with Farcaster, Nostr, Ethereum, Solana or even regular webservers. 
@@ -51,13 +55,13 @@ const authService = new AuthService({
   storageKey: 'nsauth_keyinfo',
 });
 
-// Initialize relay service with applesauce EventStore
+// Initialize relay service with EventStore
 const relayService = new RelayService({
-  relayUrls: ['wss://relay.damus.io'],
+  relayUrls: ['wss://relay.io'],
 });
 
-// Initialize with applesauce EventStore
-const eventStore = new EventStore(/* applesauce config */);
+// Initialize with EventStore
+const eventStore = new EventStore(/* config */);
 relayService.initialize(eventStore);
 ```
 
@@ -184,7 +188,7 @@ Service for communicating with Nostr relays using applesauce-core.
 
 #### Methods
 
-- `initialize(eventStore: EventStore): void` - Initialize with applesauce EventStore
+- `initialize(eventStore: EventStore): void` - Initialize with EventStore
 - `getRelays(): string[]` - Get current relay URLs
 - `setRelays(urls: string[]): void` - Set relay URLs
 - `publishEvent(event: NostrEvent, timeoutMs?: number): Promise<boolean>` - Publish event
@@ -216,7 +220,7 @@ import { EventStore } from 'applesauce-core';
 import { RelayService } from 'ns-auth-sdk';
 
 const eventStore = new EventStore({
-  // applesauce configuration
+  // configuration
 });
 
 const relayService = new RelayService();
