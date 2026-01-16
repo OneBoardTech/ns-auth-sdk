@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { NostrKeyInfo } from 'nosskey-sdk';
+import type { NostrKeyInfo } from '../utils';
 import type { AuthState } from '../types/auth';
 
 export const createAuthStore = () => {

@@ -1,7 +1,7 @@
 {
   "name": "ns-auth-sdk",
   "version": "1.2.9",
-  "description": "SSO library for NS Auth - Authentication, membership, and profile management compatible with applesauce",
+  "description": "Decentralized SSO library - Authentication, membership, and profile management",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -26,14 +26,13 @@
     "nostr",
     "sso",
     "authentication",
-    "membership",
-    "applesauce"
+    "membership"
   ],
   "author": "",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OneBoardTech/ns-auth-sdk.git"
+    "url": "https://github.com/stoic-one/ns-auth-sdk.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -41,9 +40,10 @@
   },
   "peerDependencies": {
     "applesauce-core": "^5.0.0",
-    "nosskey-sdk": "^0.0.4",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "rx-nostr": "^3.6.1",
+    "rx-nostr-crypto": "^3.1.3"
   },
   "dependencies": {
     "isomorphic-dompurify": "^2.35.0",

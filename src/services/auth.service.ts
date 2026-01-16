@@ -1,4 +1,4 @@
-import { NosskeyManager, type NostrKeyInfo, type NostrEvent, type PasskeyCreationOptions } from 'nosskey-sdk';
+import { NosskeyManager, type NostrKeyInfo, type NostrEvent, type PasskeyCreationOptions } from '../utils';
 import type { AuthServiceConfig } from '../types/auth';
 
 /**

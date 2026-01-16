@@ -1,4 +1,4 @@
-import type { NostrKeyInfo } from 'nosskey-sdk';
+import type { NostrKeyInfo } from '../utils';
 
 /**
  * Authentication state interface
