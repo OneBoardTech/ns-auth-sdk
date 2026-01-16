@@ -1,3 +1,5 @@
+## [1.2.10](https://github.com/stoic-one/ns-auth-sdk/compare/v1.2.9...v1.2.10) (2026-01-16)
+
 ## [1.2.9](https://github.com/OneBoardTech/ns-auth-sdk/compare/v1.2.8...v1.2.9) (2026-01-16)
 
 ### Updates
