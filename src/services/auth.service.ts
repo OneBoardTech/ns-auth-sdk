@@ -14,7 +14,7 @@ export class AuthService {
       rpId: config.rpId || (typeof window !== 'undefined' ? window.location.hostname.replace(/^www\./, '') : 'localhost'),
       rpName: config.rpName || this.getDefaultRpName(),
       storageKey: config.storageKey || 'nsauth_keyinfo',
-      cacheTimeoutMs: config.cacheTimeoutMs || 60 * 1000,
+      cacheTimeoutMs: config.cacheTimeoutMs || 30 * 60 * 1000,
     };
   }
 
@@ -141,7 +141,7 @@ export class AuthService {
    * Check if PRF is supported
    */
   async isPrfSupported(): Promise<boolean> {
-    const { isPrfSupported } = await import('nosskey-sdk');
+    const { isPrfSupported } = await import('../utils');
     return await isPrfSupported();
   }
 }
