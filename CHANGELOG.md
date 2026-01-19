@@ -1,3 +1,13 @@
+# [1.4.0](https://github.com/stoic-one/ns-auth-sdk/compare/v1.3.0...v1.4.0) (2026-01-19)
+
+
+### Features
+
+* **auth:** add early key caching ([a82f506](https://github.com/stoic-one/ns-auth-sdk/commit/a82f50681400e11b81d419ddf8a05627e0616c29))
+* **auth:** add optional early key caching ([aaa3317](https://github.com/stoic-one/ns-auth-sdk/commit/aaa3317c2d4645b74e3b57e99b5d2ee4a094dd31))
+* **auth:** cache PRF secret in createNostrKey() to reduce biometric prompts ([d3b3efc](https://github.com/stoic-one/ns-auth-sdk/commit/d3b3efc463f16d9f460d77419e44c4d53b23a4f2))
+* **package:** remove dependency ([01ee214](https://github.com/stoic-one/ns-auth-sdk/commit/01ee214d40b82541bc8a6811b2a046372f0af166))
+
 # [1.3.0](https://github.com/stoic-one/ns-auth-sdk/compare/v1.2.10...v1.3.0) (2026-01-16)
 
 
