@@ -26,12 +26,6 @@ importers:
       react-zxing:
         specifier: ^2.1.0
         version: 2.1.0(react@18.3.1)
-      rx-nostr:
-        specifier: ^3.6.1
-        version: 3.6.2
-      rx-nostr-crypto:
-        specifier: ^3.1.3
-        version: 3.1.3(rx-nostr@3.6.2)
       zustand:
         specifier: ^4.5.7
         version: 4.5.7(@types/react@18.3.27)(react@18.3.1)
@@ -54,6 +48,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.7
         version: 18.3.7(@types/react@18.3.27)
+      nostr-tools:
+        specifier: ~2.19.4
+        version: 2.19.4(typescript@5.9.3)
       semantic-release:
         specifier: ^23.1.1
         version: 23.1.1(typescript@5.9.3)
@@ -182,10 +179,6 @@ packages:
   '@noble/curves@1.2.0':
     resolution: {integrity: sha512-oYclrNgRaM9SsBUBVbb8M6DTV7ZHRTKugureoYEncY5c65HOmRzvSiTE3y5CYaPYJA/GVkrhXEoF0M3Ya9PMnw==}
 
-  '@noble/curves@1.9.7':
-    resolution: {integrity: sha512-gbKGcRUYIjA3/zCCNaWDciTMFI0dCkvou3TL8Zmy5Nc7sJ47a0jtOeZoTaMxkuqRo9cRhjOdZJXegxYE5FN/xw==}
-    engines: {node: ^14.21.3 || >=16}
-
   '@noble/hashes@1.3.1':
     resolution: {integrity: sha512-EbqwksQwz9xDRGfDST86whPBgM65E0OH/pCgqW0GBVzO22bNE+NuIbeTb714+IfSjU3aRk47EUvXIb5bTsenKA==}
     engines: {node: '>= 16'}
@@ -193,10 +186,6 @@ packages:
   '@noble/hashes@1.3.2':
     resolution: {integrity: sha512-MVC8EAQp7MvEcm30KWENFjgR+Mkmf+D189XJTkFIlwohU5hcBbn1ZkKq7KVTi2Hme3PMGF390DaL52beVrIihQ==}
     engines: {node: '>= 16'}
-
-  '@noble/hashes@1.8.0':
-    resolution: {integrity: sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==}
-    engines: {node: ^14.21.3 || >=16}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -495,9 +484,6 @@ packages:
 
   '@scure/base@1.1.1':
     resolution: {integrity: sha512-ZxOhsSyxYwLJj3pLZCefNitxsj093tb2vq90mp2txoYeBqbcjDjqFhyM8eUjq/uFm6zJ+mUuqxlS2FkuSY1MTA==}
-
-  '@scure/base@1.2.6':
-    resolution: {integrity: sha512-g/nm5FgUa//MCj1gV09zTJTaM6KBAHqLN907YVQqf7zC49+DcO4B1so4ZX07Ef10Twr6nuqYEH9GEggFXA4Fmg==}
 
   '@scure/bip32@1.3.1':
     resolution: {integrity: sha512-osvveYtyzdEVbt3OfwwXFr4P2iVBL5u1Q3q4ONBfDY/UpOuXmOlbgwc1xECEboY8wIays8Yt6onaWMUdUbfl0A==}
@@ -1333,9 +1319,6 @@ packages:
       typescript:
         optional: true
 
-  nostr-typedef@0.9.0:
-    resolution: {integrity: sha512-nLTzhlYcRnLQGUJ5YfvGAUDyGFHjGH6Qozltl/wV3UXelmiUwjrwI8IIxQNkbgVMv+zmbFi/m1xKHxIvVfG09w==}
-
   nostr-wasm@0.1.0:
     resolution: {integrity: sha512-78BTryCLcLYv96ONU8Ws3Q1JzjlAt+43pWQhIl86xZmWeegYCNLPml7yQ+gG3vR6V5h4XGj+TxO+SS5dsThQIA==}
 
@@ -1679,17 +1662,6 @@ packages:
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
-
-  rx-nostr-crypto@3.1.3:
-    resolution: {integrity: sha512-8WiXCBBMbiFlXs7twmYyPl4+LmwhCI3BeSRtM5jeqvL9BDta/xt825M7iZjih7ChRw9MZWbQZcpFRplM9iIChg==}
-    peerDependencies:
-      rx-nostr: ~3
-    peerDependenciesMeta:
-      rx-nostr:
-        optional: true
-
-  rx-nostr@3.6.2:
-    resolution: {integrity: sha512-WaNNRR0NqonBIfXKkRcr6Zk30lkc9UiAaECSL6NpluKJuXuMR39udFOFlDSNCIFAg1tPyBtwHfs6rLHC6GKbyg==}
 
   rxjs@7.8.2:
     resolution: {integrity: sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==}
@@ -2223,15 +2195,9 @@ snapshots:
     dependencies:
       '@noble/hashes': 1.3.2
 
-  '@noble/curves@1.9.7':
-    dependencies:
-      '@noble/hashes': 1.8.0
-
   '@noble/hashes@1.3.1': {}
 
   '@noble/hashes@1.3.2': {}
-
-  '@noble/hashes@1.8.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -2478,17 +2444,15 @@ snapshots:
 
   '@scure/base@1.1.1': {}
 
-  '@scure/base@1.2.6': {}
-
   '@scure/bip32@1.3.1':
     dependencies:
       '@noble/curves': 1.1.0
-      '@noble/hashes': 1.3.1
+      '@noble/hashes': 1.3.2
       '@scure/base': 1.1.1
 
   '@scure/bip39@1.2.1':
     dependencies:
-      '@noble/hashes': 1.3.1
+      '@noble/hashes': 1.3.2
       '@scure/base': 1.1.1
 
   '@sec-ant/readable-stream@0.4.1': {}
@@ -3385,8 +3349,6 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  nostr-typedef@0.9.0: {}
-
   nostr-wasm@0.1.0: {}
 
   npm-run-path@4.0.1:
@@ -3654,20 +3616,6 @@ snapshots:
   run-parallel@1.2.0:
     dependencies:
       queue-microtask: 1.2.3
-
-  rx-nostr-crypto@3.1.3(rx-nostr@3.6.2):
-    dependencies:
-      '@noble/curves': 1.9.7
-      '@noble/hashes': 1.8.0
-      '@scure/base': 1.2.6
-      nostr-typedef: 0.9.0
-    optionalDependencies:
-      rx-nostr: 3.6.2
-
-  rx-nostr@3.6.2:
-    dependencies:
-      nostr-typedef: 0.9.0
-      rxjs: 7.8.2
 
   rxjs@7.8.2:
     dependencies:

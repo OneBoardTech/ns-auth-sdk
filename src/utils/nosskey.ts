@@ -1,4 +1,4 @@
-import { seckeySigner } from 'rx-nostr-crypto';
+import { finalizeEvent, getPublicKey } from 'nostr-tools/pure';
 import { KeyCache } from './key-cache.js';
 import { createPasskey, getPrfSecret, isPrfSupported } from './prf-handler.js';
 import type {
@@ -267,9 +267,7 @@ export class NosskeyManager implements NosskeyManagerLike {
     // HEX
     const skHex = bytesToHex(sk);
 
-    // rx-nostr-crypto
-    const signer = seckeySigner(skHex);
-    const publicKey = await signer.getPublicKey();
+    const publicKey = getPublicKey(sk);
 
     // NostrKeyInfo
     const keyInfo: NostrKeyInfo = {
@@ -319,13 +317,15 @@ export class NosskeyManager implements NosskeyManagerLike {
       }
     }
 
-    const skHex = bytesToHex(sk);
+    const eventToSign = {
+      kind: event.kind,
+      content: event.content,
+      created_at: event.created_at || Math.floor(Date.now() / 1000),
+      tags: tags ? [...(event.tags || []), ...tags] : event.tags || [],
+    };
 
-    // rx-nostr-crypto seckeySigner
-    const signer = seckeySigner(skHex, { tags });
-    const signedEvent = await signer.signEvent(event);
+    const signedEvent = finalizeEvent(eventToSign, sk);
 
-    // clearMemory=true
     if (!shouldUseCache && clearMemory) {
       this.#clearKey(sk);
     }
