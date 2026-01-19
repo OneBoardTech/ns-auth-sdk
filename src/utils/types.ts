@@ -61,6 +61,7 @@ export interface GetPrfSecretOptions {
 export interface KeyCacheOptions {
   enabled: boolean;
   timeoutMs?: number;
+  cacheOnCreation?: boolean;
 }
 
 /**

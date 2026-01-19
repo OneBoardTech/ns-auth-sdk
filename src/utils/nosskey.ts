@@ -279,8 +279,8 @@ export class NosskeyManager implements NosskeyManagerLike {
       ...(options.username && { username: options.username }), // username
     };
 
-    // Cache the secret key so subsequent signEvent() calls don't require biometric
-    if (this.#keyCache.isEnabled()) {
+    // Optional early caching based on cacheOnCreation setting
+    if (this.#keyCache.isEnabled() && this.#keyCache.getCacheOptions().cacheOnCreation) {
       this.#keyCache.setKey(keyInfo.credentialId, sk);
     }
 
