@@ -53,6 +53,7 @@ const authService = new AuthService({
   rpId: 'your-domain.com',
   rpName: 'Your App Name',
   storageKey: 'nsauth_keyinfo',
+  cacheOnCreation: true, // Enable early caching (default: true)
 });
 
 // Initialize relay service with EventStore
@@ -181,6 +182,33 @@ function MembershipPageComponent() {
 - `hasKeyInfo(): boolean` - Check if key info exists
 - `clearStoredKeyInfo(): void` - Clear stored key info
 - `isPrfSupported(): Promise<boolean>` - Check if PRF is supported
+
+#### Configuration Options
+
+```typescript
+interface NosskeyManagerOptions {
+  cacheOptions?: {
+    enabled: boolean;
+    timeoutMs?: number;
+    cacheOnCreation?: boolean; // Cache key immediately after derivation (default: true)
+  };
+  storageOptions?: {
+    enabled: boolean;
+    storage?: Storage;
+    storageKey?: string;
+  };
+  prfOptions?: {
+    rpId?: string;
+    timeout?: number;
+    userVerification?: UserVerificationRequirement;
+  };
+}
+```
+
+**Cache Options:**
+- `enabled`: Enable/disable key caching
+- `timeoutMs`: Cache timeout in milliseconds (default: 30 minutes)
+- `cacheOnCreation`: When `true`, caches the key immediately after `createNostrKey()` to reduce biometric prompts from 2-3 to 1-2. This is enabled by default for better user experience.
 
 ### RelayService
 

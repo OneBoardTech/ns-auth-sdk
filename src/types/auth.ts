@@ -21,6 +21,7 @@ export interface AuthServiceConfig {
   rpName?: string;
   storageKey?: string;
   cacheTimeoutMs?: number;
+  cacheOnCreation?: boolean;
 }
 
 /**

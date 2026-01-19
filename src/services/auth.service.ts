@@ -7,7 +7,7 @@ import type { AuthServiceConfig } from '../types/auth';
  */
 export class AuthService {
   private manager: NosskeyManager | null = null;
-  private config: Required<AuthServiceConfig>;
+  private config: AuthServiceConfig;
 
   constructor(config: AuthServiceConfig = {}) {
     this.config = {
@@ -15,6 +15,7 @@ export class AuthService {
       rpName: config.rpName || this.getDefaultRpName(),
       storageKey: config.storageKey || 'nsauth_keyinfo',
       cacheTimeoutMs: config.cacheTimeoutMs || 30 * 60 * 1000,
+      cacheOnCreation: config.cacheOnCreation !== undefined ? config.cacheOnCreation : true,
     };
   }
 
@@ -34,6 +35,7 @@ export class AuthService {
         cacheOptions: {
           enabled: true,
           timeoutMs: this.config.cacheTimeoutMs,
+          cacheOnCreation: this.config.cacheOnCreation,
         },
         storageOptions: {
           enabled: true,
