@@ -1,10 +1,10 @@
 name: Publish
 
 on:
-  workflow_dispatch:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 permissions:
   id-token: write  # Required for OIDC
@@ -20,7 +20,6 @@ jobs:
       
       # If triggered by workflow_run or workflow_dispatch, find the latest tag
       - name: Get latest tag
-        if: github.event_name == 'workflow_run' || github.event_name == 'workflow_dispatch'
         id: get_tag
         run: |
           TAG=$(git describe --tags --abbrev=0)
@@ -29,7 +28,6 @@ jobs:
       
       # Checkout the tag if triggered by workflow_run or workflow_dispatch
       - name: Checkout tag
-        if: github.event_name == 'workflow_run' || github.event_name == 'workflow_dispatch'
         run: |
           git checkout ${{ steps.get_tag.outputs.tag }}
 
