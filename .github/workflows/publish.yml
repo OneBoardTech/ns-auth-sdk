@@ -4,7 +4,6 @@ on:
   push:
     tags:
       - 'v*'
-  workflow_dispatch:
 
 permissions:
   id-token: write  # Required for OIDC
@@ -17,19 +16,7 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0  # Fetch all history and tags
-      
-      # If triggered by workflow_run or workflow_dispatch, find the latest tag
-      - name: Get latest tag
-        id: get_tag
-        run: |
-          TAG=$(git describe --tags --abbrev=0)
-          echo "tag=$TAG" >> $GITHUB_OUTPUT
-          echo "Found tag: $TAG"
-      
-      # Checkout the tag if triggered by workflow_run or workflow_dispatch
-      - name: Checkout tag
-        run: |
-          git checkout ${{ steps.get_tag.outputs.tag }}
+          ref: ${{ github.ref }}  # Checkout the tag that triggered this workflow
 
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
