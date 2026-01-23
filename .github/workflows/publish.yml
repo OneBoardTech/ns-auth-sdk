@@ -1,9 +1,14 @@
 name: Publish Package
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Release"]
+    types:
+      - completed
+  release:
+    types:
+      - published
 
 permissions:
   id-token: write  # Required for OIDC
@@ -12,12 +17,37 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: "contains(github.event.head_commit.message, 'chore(release)')"
+    # Only run if Release workflow succeeded, if triggered by release event, or if manually triggered
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
+      github.event_name == 'release'
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0  # Fetch all history and tags
-          ref: ${{ github.event_name == 'push' && github.ref || github.event.release.tag_name }}
+          ref: ${{ github.event_name == 'release' && github.event.release.tag_name || 'main' }}
+      
+      # Get the latest tag if triggered by workflow_run or workflow_dispatch
+      - name: Get latest tag
+        if: github.event_name == 'workflow_run' || github.event_name == 'workflow_dispatch'
+        id: get_tag
+        run: |
+          git fetch --tags --force
+          # Get the most recent tag (semantic-release creates tags in order)
+          TAG=$(git tag --sort=-creatordate | head -n 1)
+          if [ -z "$TAG" ]; then
+            echo "No tags found"
+            exit 1
+          fi
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "Found tag: $TAG"
+      
+      # Checkout the tag if triggered by workflow_run or workflow_dispatch
+      - name: Checkout tag
+        if: github.event_name == 'workflow_run' || github.event_name == 'workflow_dispatch'
+        run: |
+          git checkout ${{ steps.get_tag.outputs.tag }}
 
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
