@@ -1,4 +1,4 @@
-import { finalizeEvent, getPublicKey } from 'nostr-tools/pure';
+import { finalizeEvent, getPublicKey } from 'applesauce-core/helpers';
 import { KeyCache } from './key-cache.js';
 import { createPasskey, getPrfSecret, isPrfSupported } from './prf-handler.js';
 import type {
