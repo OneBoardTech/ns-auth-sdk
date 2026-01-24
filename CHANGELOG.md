@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/stoic-one/ns-auth-sdk/compare/v1.6.0...v1.7.0) (2026-01-24)
+
+
+### Features
+
+* **packages:** Update package.json for react flexibility ([33f64ab](https://github.com/stoic-one/ns-auth-sdk/commit/33f64abf85c14e671476d6a3a7075f51a7a46756))
+
 # [1.6.0](https://github.com/stoic-one/ns-auth-sdk/compare/v1.5.8...v1.6.0) (2026-01-24)
 
 
