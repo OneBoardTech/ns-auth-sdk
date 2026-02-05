@@ -223,6 +223,10 @@ export class NosskeyManager implements NosskeyManagerLike {
     return this.#keyCache.getCacheOptions();
   }
 
+  getCachedSecretKey(credentialId: Uint8Array | string): Uint8Array | undefined {
+    return this.#keyCache.getKey(credentialId);
+  }
+
   /**
    * @param credentialId
    */
