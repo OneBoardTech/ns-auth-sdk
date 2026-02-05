@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/stoic-one/ns-auth-sdk/compare/v1.7.0...v1.8.0) (2026-02-05)
+
+
+### Features
+
+* **cache:** add caching method ([1a925b8](https://github.com/stoic-one/ns-auth-sdk/commit/1a925b8ef9bceff774edbdede819b136a6420808))
+
 # [1.7.0](https://github.com/stoic-one/ns-auth-sdk/compare/v1.6.0...v1.7.0) (2026-01-24)
 
 
